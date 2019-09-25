@@ -1,12 +1,14 @@
 backend:
   name: git-gateway
   repo: gatewayapps/gatewayengineering-website
-  branch: master
+  branch: NETLIFY_CMS_BRANCH
+
+# publish_mode: editorial_workflow
+site_url: https://www.gatewayengineering.com/
+display_url: https://www.gatewayengineering.com/
 
 media_folder: static/img
-public_folder: /img
-
-collections:
+public_folder: /imgcollections:
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
