@@ -6,6 +6,7 @@ backend:
 # publish_mode: editorial_workflow
 site_url: https://www.gatewayengineering.com/
 display_url: https://www.gatewayengineering.com/
+logo_url: static/img/gateway-engineering-mark.png
 
 media_folder: static/img
 public_folder: /img
