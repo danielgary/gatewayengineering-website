@@ -7,7 +7,6 @@ export const HeaderTemplate = ({ content }) => {
   // StylesheetInjector injects the styled components into the iframe in the CMS preview pages.
   return (
     <StylesheetInjector>
-      <MuktaVaani />
       <HeaderContainer />
     </StylesheetInjector>
   );
