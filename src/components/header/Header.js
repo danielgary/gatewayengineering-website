@@ -5,7 +5,11 @@ import {} from "./styled";
 import { HeaderContent } from "./HeaderContent";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const Header = ({ content }) => {
+export const Header = ({
+  content,
+  mobileNavigationMenuIsOpen,
+  updateMobileNavigationMenuIsOpen
+}) => {
   const siteData = content.allMarkdownRemark;
   console.log("Content: ", content);
   return (
@@ -13,6 +17,8 @@ export const Header = ({ content }) => {
       <HeaderContent
         content={content}
         containsPreviewData={!siteData ? true : false}
+        mobileNavigationMenuIsOpen={mobileNavigationMenuIsOpen}
+        updateMobileNavigationMenuIsOpen={updateMobileNavigationMenuIsOpen}
       />
     </>
   );

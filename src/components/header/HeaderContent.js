@@ -4,9 +4,12 @@ import {
   ImageAndLinkWrapper,
   ImageWrapper,
   NavigationWrapper,
-  NavigationLink
+  NavigationLink,
+  NavigationMenuToggle
 } from "./styled";
 import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 let isPreview;
 
@@ -20,7 +23,12 @@ const renderNavigationLinks = navigationLinks => {
   });
 };
 
-export const HeaderContent = ({ content, containsPreviewData }) => {
+export const HeaderContent = ({
+  content,
+  containsPreviewData,
+  mobileNavigationMenuIsOpen,
+  updateMobileNavigationMenuIsOpen
+}) => {
   isPreview = containsPreviewData;
   const pageContent = isPreview
     ? content
@@ -32,20 +40,29 @@ export const HeaderContent = ({ content, containsPreviewData }) => {
 
   return (
     <>
-      <HeaderWrapper>
+      <HeaderWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
         <ImageAndLinkWrapper>
           <Link to="/">
             <ImageWrapper>
               <img src={headerLogo} alt="gatewayengineering logo" />
             </ImageWrapper>
           </Link>
-          <NavigationWrapper>
+          <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
             {renderNavigationLinks(navigationLinks)}
           </NavigationWrapper>
+          <NavigationMenuToggle
+            style={{ width: isPreview ? "1em" : "2.25em" }}
+            onClick={() =>
+              updateMobileNavigationMenuIsOpen(!mobileNavigationMenuIsOpen)
+            }
+          >
+            <FontAwesomeIcon
+              icon={faBars}
+              style={{ display: "block", margin: "0 auto", marginTop: "2px" }}
+            />
+          </NavigationMenuToggle>
         </ImageAndLinkWrapper>
       </HeaderWrapper>
     </>
   );
 };
-
-// Start mobile view at 780px
