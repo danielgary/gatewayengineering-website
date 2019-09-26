@@ -1,5 +1,18 @@
 import React from "react";
-import { NavigationLink } from "./styled";
+import {
+  NavigationLink,
+  FooterOuterWrapper,
+  FooterInnerWrapper,
+  ContactAndLinkWrapper,
+  ContactWrapper,
+  ContactEmail,
+  ContactPhoneNumber,
+  ContactStreetAddress,
+  NavigationLinkwWrapper,
+  FooterLogoAndCopyright,
+  Copyright,
+  ImageWrapper
+} from "./styled";
 import { Link } from "gatsby";
 
 let isPreview;
@@ -29,25 +42,37 @@ export const FooterContent = ({ content, containsPreviewData }) => {
 
   return (
     <>
-      <div>Hello from the footer component</div>
-      <div>
-        <div>
-          <div>
-            <div>
-              <div>{pageContent.contactInformation.emailAddress}</div>
-              <div>{pageContent.contactInformation.phoneNumber}</div>
-              <div>{pageContent.contactInformation.streetAddress}</div>
-            </div>
-            <div>
-              <div>{renderNavigationLinks(navigationLinks)}</div>
-            </div>
-          </div>
-          <div>
-            <img src={footerLogoImage} alt="Gateway Engineering logo" />
-            <p>{pageContent.copyright}</p>
-          </div>
-        </div>
-      </div>
+      <div style={{ marginTop: "800px" }}></div>
+      <FooterOuterWrapper>
+        <FooterInnerWrapper>
+          <ContactAndLinkWrapper>
+            <ContactWrapper>
+              <ContactEmail>
+                <a
+                  href={`mailto:${pageContent.contactInformation.emailAddress}`}
+                >
+                  {pageContent.contactInformation.emailAddress}
+                </a>
+              </ContactEmail>
+              <ContactPhoneNumber>
+                {pageContent.contactInformation.phoneNumber}
+              </ContactPhoneNumber>
+              <ContactStreetAddress>
+                {pageContent.contactInformation.streetAddress}
+              </ContactStreetAddress>
+            </ContactWrapper>
+            <NavigationLinkwWrapper>
+              {renderNavigationLinks(navigationLinks)}
+            </NavigationLinkwWrapper>
+          </ContactAndLinkWrapper>
+          <FooterLogoAndCopyright>
+            <ImageWrapper>
+              <img src={footerLogoImage} alt="Gateway Engineering logo" />
+            </ImageWrapper>
+            <Copyright>{pageContent.copyright}</Copyright>
+          </FooterLogoAndCopyright>
+        </FooterInnerWrapper>
+      </FooterOuterWrapper>
     </>
   );
 };

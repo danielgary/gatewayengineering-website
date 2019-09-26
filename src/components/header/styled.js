@@ -29,6 +29,9 @@ const ImageWrapper = styled.div`
     @media (max-width: 824px) {
       width: 300px;
     }
+    @media (max-width: 410px) {
+      width: 240px;
+    }
   }
 `;
 const NavigationWrapper = styled.div`
@@ -67,7 +70,7 @@ const NavigationLink = styled.div`
       font-size: 18px;
     }
     &:hover {
-      color: #28bafd;
+      color: #c27a75;
     }
   }
 `;
