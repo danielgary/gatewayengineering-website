@@ -57,7 +57,7 @@ collections:
                 widget: string
               - label: Contact Information
                 name: contactInformation
-                widget: list
+                widget: object
                 fields:
                   - { label: Email, name: emailAddress, widget: string }
                   - { label: Phone Number, name: phoneNumber, widget: string }
