@@ -5,10 +5,12 @@ import {
   FooterInnerWrapper,
   ContactAndLinkWrapper,
   ContactWrapper,
+  ContactUs,
   ContactEmail,
   ContactPhoneNumber,
   ContactStreetAddress,
   NavigationLinkwWrapper,
+  NavigationText,
   FooterLogoAndCopyright,
   Copyright,
   ImageWrapper
@@ -38,8 +40,6 @@ export const FooterContent = ({ content, containsPreviewData }) => {
     : pageContent.footerLogo.publicURL;
   const { navigationLinks } = pageContent;
 
-  console.log("pageContent: ", pageContent);
-
   return (
     <>
       <div style={{ marginTop: "535px" }}></div>
@@ -48,6 +48,7 @@ export const FooterContent = ({ content, containsPreviewData }) => {
           <ContactAndLinkWrapper>
             <ContactWrapper>
               <ContactEmail>
+                <ContactUs>Contact us</ContactUs>
                 <a
                   href={`mailto:${pageContent.contactInformation.emailAddress}`}
                 >
@@ -62,6 +63,7 @@ export const FooterContent = ({ content, containsPreviewData }) => {
               </ContactStreetAddress>
             </ContactWrapper>
             <NavigationLinkwWrapper>
+              <NavigationText>Navigation</NavigationText>
               {renderNavigationLinks(navigationLinks)}
             </NavigationLinkwWrapper>
           </ContactAndLinkWrapper>

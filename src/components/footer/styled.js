@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-const NavigationLink = styled.div`
-  > a {
-    text-decoration: none;
-    color: #28bafd;
-    font-size: 20px;
-    font-weight: 300;
-    @media (max-width: 440px) {
-      font-size: 18px;
-    }
-    &:hover {
-      color: #c27a75;
-    }
-  }
-`;
 const FooterOuterWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -28,13 +14,21 @@ const FooterInnerWrapper = styled.div`
 const ContactAndLinkWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  @media (max-width: 500px) {
+    margin-bottom: 20px;
+  }
 `;
 const ContactWrapper = styled.div`
   max-width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+const ContactUs = styled.p`
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
 `;
 const ContactEmail = styled.div`
   > a {
@@ -65,6 +59,27 @@ const NavigationLinkwWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+const NavigationText = styled.p`
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+`;
+const NavigationLink = styled.div`
+  text-align: end;
+  > a {
+    text-decoration: none;
+    color: #28bafd;
+    font-size: 20px;
+    font-weight: 300;
+    @media (max-width: 440px) {
+      font-size: 18px;
+    }
+    &:hover {
+      color: #c27a75;
+    }
+  }
+`;
 const FooterLogoAndCopyright = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,10 +105,12 @@ export {
   FooterInnerWrapper,
   ContactAndLinkWrapper,
   ContactWrapper,
+  ContactUs,
   ContactEmail,
   ContactPhoneNumber,
   ContactStreetAddress,
   NavigationLinkwWrapper,
+  NavigationText,
   FooterLogoAndCopyright,
   Copyright,
   ImageWrapper
