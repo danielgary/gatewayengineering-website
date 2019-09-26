@@ -25,5 +25,21 @@ const NavigationWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+const NavigationLink = styled.div`
+  > a {
+    text-decoration: none;
+    color: #040481;
+    font-size: 20px;
+    &:hover {
+      color: #28bafd;
+    }
+  }
+`;
 
-export { HeaderWrapper, ImageAndLinkWrapper, ImageWrapper, NavigationWrapper };
+export {
+  HeaderWrapper,
+  ImageAndLinkWrapper,
+  ImageWrapper,
+  NavigationWrapper,
+  NavigationLink
+};

@@ -3,27 +3,29 @@ import {
   HeaderWrapper,
   ImageAndLinkWrapper,
   ImageWrapper,
-  NavigationWrapper
+  NavigationWrapper,
+  NavigationLink
 } from "./styled";
+import { Link } from "gatsby";
 
 let isPreview;
 
 const renderNavigationLinks = navigationLinks => {
   return navigationLinks.map((link, index) => {
     return (
-      <div key={index}>
-        <a href={link.path}>{link.name}</a>
-      </div>
+      <NavigationLink key={index}>
+        <Link to={link.path}>{link.name}</Link>
+      </NavigationLink>
     );
   });
 };
 
 export const HeaderContent = ({ content, containsPreviewData }) => {
   isPreview = containsPreviewData;
-  const pageContent = containsPreviewData
+  const pageContent = isPreview
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
-  const headerLogo = containsPreviewData
+  const headerLogo = isPreview
     ? content.headerLogo
     : pageContent.headerLogo.publicURL;
   const { navigationLinks } = pageContent;
@@ -32,9 +34,11 @@ export const HeaderContent = ({ content, containsPreviewData }) => {
     <>
       <HeaderWrapper>
         <ImageAndLinkWrapper>
-          <ImageWrapper>
-            <img src={headerLogo} alt="gatewayengineering logo" />
-          </ImageWrapper>
+          <Link to="/">
+            <ImageWrapper>
+              <img src={headerLogo} alt="gatewayengineering logo" />
+            </ImageWrapper>
+          </Link>
           <NavigationWrapper>
             {renderNavigationLinks(navigationLinks)}
           </NavigationWrapper>
@@ -43,3 +47,5 @@ export const HeaderContent = ({ content, containsPreviewData }) => {
     </>
   );
 };
+
+// Start mobile view at 780px

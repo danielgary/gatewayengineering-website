@@ -27,7 +27,9 @@ const HEADER_QUERY = graphql`
 `;
 
 export const HeaderContainer = ({ content }) => {
-  //   let [navigationMenuIsOpen, updateNavigationMenuIsOpen] = useState(false);
+  // let [mobileNavigationMenuIsOpen, updateMobileNavigationMenuIsOpen] = useState(
+  //   false
+  // );
   return <Header content={content} />;
 };
 
