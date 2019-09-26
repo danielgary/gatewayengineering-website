@@ -1,34 +1,18 @@
 import React from "react";
-import {} from "./styled";
+import { NavigationLink } from "./styled";
+import { Link } from "gatsby";
 
 let isPreview;
 
-// const renderLinks = links => {
-//   return links.map((link, index) => {
-//     return (
-//       <LinkList key={index}>
-//         <LinkItems href={link.linkPath}>{link.linkName}</LinkItems>
-//       </LinkList>
-//     );
-//   });
-// };
-
-// const renderSocialMediaLinks = socialMediaLinks => {
-//   return socialMediaLinks.map((link, index) => {
-//     const imagePath = isPreview
-//       ? link.socialMediaImage
-//       : link.socialMediaImage.publicURL;
-//     return (
-//       <div key={index}>
-//         <div>
-//           <a href={link.socialMediaPath}>
-//             <img src={imagePath} />
-//           </a>
-//         </div>
-//       </div>
-//     );
-//   });
-// };
+const renderNavigationLinks = navigationLinks => {
+  return navigationLinks.map((link, index) => {
+    return (
+      <NavigationLink key={index}>
+        <Link to={link.path}>{link.name}</Link>
+      </NavigationLink>
+    );
+  });
+};
 
 export const FooterContent = ({ content, containsPreviewData }) => {
   isPreview = containsPreviewData;
@@ -36,10 +20,34 @@ export const FooterContent = ({ content, containsPreviewData }) => {
   const pageContent = isPreview
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
+  const footerLogoImage = isPreview
+    ? pageContent.footerLogo
+    : pageContent.footerLogo.publicURL;
+  const { navigationLinks } = pageContent;
+
+  console.log("pageContent: ", pageContent);
 
   return (
     <>
       <div>Hello from the footer component</div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>{pageContent.contactInformation.emailAddress}</div>
+              <div>{pageContent.contactInformation.phoneNumber}</div>
+              <div>{pageContent.contactInformation.streetAddress}</div>
+            </div>
+            <div>
+              <div>{renderNavigationLinks(navigationLinks)}</div>
+            </div>
+          </div>
+          <div>
+            <img src={footerLogoImage} alt="Gateway Engineering logo" />
+            <p>{pageContent.copyright}</p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
