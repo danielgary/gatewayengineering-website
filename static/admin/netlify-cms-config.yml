@@ -11,9 +11,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-      - label: "Front Page Components"
-        name: "frontPageComponents"
-        files:
       - label: "Reusable Components"
         name: "reusableComponents"
         files:
