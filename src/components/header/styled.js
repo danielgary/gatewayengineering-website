@@ -64,6 +64,7 @@ const NavigationLink = styled.div`
   }
   > a {
     text-decoration: none;
+    font-weight: 500;
     color: #040481;
     font-size: 20px;
     @media (max-width: 1000px) {

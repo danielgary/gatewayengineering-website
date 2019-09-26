@@ -42,7 +42,7 @@ export const FooterContent = ({ content, containsPreviewData }) => {
 
   return (
     <>
-      <div style={{ marginTop: "800px" }}></div>
+      <div style={{ marginTop: "535px" }}></div>
       <FooterOuterWrapper>
         <FooterInnerWrapper>
           <ContactAndLinkWrapper>

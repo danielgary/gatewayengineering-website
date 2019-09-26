@@ -5,6 +5,7 @@ const NavigationLink = styled.div`
     text-decoration: none;
     color: #28bafd;
     font-size: 20px;
+    font-weight: 300;
     @media (max-width: 440px) {
       font-size: 18px;
     }
@@ -20,9 +21,9 @@ const FooterOuterWrapper = styled.div`
   background-color: #040481;
 `;
 const FooterInnerWrapper = styled.div`
-  max-width: 700px;
+  max-width: 1000px;
   width: 90%;
-  padding: 40px 20px;
+  padding: 20px 20px;
 `;
 const ContactAndLinkWrapper = styled.div`
   display: flex;
@@ -40,6 +41,7 @@ const ContactEmail = styled.div`
     text-decoration: none;
     color: #28bafd;
     font-size: 20px;
+    font-weight: 300;
     @media (max-width: 440px) {
       font-size: 18px;
     }
