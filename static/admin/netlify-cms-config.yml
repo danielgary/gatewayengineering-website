@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: gatewayapps/gatewayengineering-website
-  branch: initial-setup 
+  branch: NETLIFY_CMS_BRANCH
 
 # publish_mode: editorial_workflow
 site_url: https://www.gatewayengineering.com/
