@@ -2,16 +2,23 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Header } from "./Header";
 
-const NAVIGATION_ITEMS_QUERY = graphql`
+const HEADER_QUERY = graphql`
   query HeaderQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "header-component" } } }
+      filter: { frontmatter: { templateKey: { eq: "header" } } }
     ) {
       edges {
         node {
           id
           frontmatter {
             templateKey
+            headerLogo {
+              publicURL
+            }
+            navigationLinks {
+              name
+              path
+            }
           }
         }
       }
@@ -19,12 +26,12 @@ const NAVIGATION_ITEMS_QUERY = graphql`
   }
 `;
 
-export const HeaderContainer = () => {
+export const HeaderContainer = ({ content }) => {
   //   let [navigationMenuIsOpen, updateNavigationMenuIsOpen] = useState(false);
-  return <Header />;
+  return <Header content={content} />;
 };
 
 export default () => {
-  const data = useStaticQuery(NAVIGATION_ITEMS_QUERY);
-  return <HeaderContainer data={data} />;
+  const data = useStaticQuery(HEADER_QUERY);
+  return <HeaderContainer content={data} />;
 };

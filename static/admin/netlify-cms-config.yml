@@ -14,6 +14,9 @@ collections:
       - label: "Front Page Components"
         name: "frontPageComponents"
         files:
+      - label: "Reusable Components"
+        name: "reusableComponents"
+        files:
           - label: "Header Page"
             name: "header"
             file: "src/pages/header/header.md"
