@@ -22,13 +22,14 @@ const ContactWrapper = styled.div`
   max-width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 const ContactUs = styled.p`
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   margin: 0;
+  line-height: 1.2;
+  margin-bottom: 5px;
 `;
 const ContactEmail = styled.div`
   > a {
@@ -47,11 +48,13 @@ const ContactEmail = styled.div`
 const ContactPhoneNumber = styled.p`
   margin: 0;
   color: #bdbac2;
+  line-height: 1.2;
 `;
 const ContactStreetAddress = styled.p`
   margin: 0;
   max-width: 250px;
   color: #bdbac2;
+  line-height: 1.2;
 `;
 const NavigationLinkwWrapper = styled.div`
   max-width: 40%;
@@ -64,14 +67,18 @@ const NavigationText = styled.p`
   font-size: 20px;
   font-weight: 500;
   margin: 0;
+  line-height: 1.2;
+  margin-bottom: 5px;
 `;
 const NavigationLink = styled.div`
   text-align: end;
+  line-height: 1.2;
   > a {
     text-decoration: none;
     color: #28bafd;
     font-size: 20px;
     font-weight: 300;
+    line-height: 1.2;
     @media (max-width: 440px) {
       font-size: 18px;
     }
@@ -88,6 +95,7 @@ const FooterLogoAndCopyright = styled.div`
 const Copyright = styled.p`
   margin: 0;
   color: #bdbac2;
+  line-height: 1.2;
 `;
 const ImageWrapper = styled.div`
   width: 90px;
