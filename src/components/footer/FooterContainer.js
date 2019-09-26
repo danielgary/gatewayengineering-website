@@ -12,6 +12,19 @@ const FOOTER_QUERY = graphql`
           id
           frontmatter {
             templateKey
+            footerLogo {
+              publicURL
+            }
+            navigationLinks {
+              name
+              path
+            }
+            copyright
+            contactInformation {
+              emailAddress
+              phoneNumber
+              streetAddress
+            }
           }
         }
       }
