@@ -8,7 +8,6 @@ export const ServicesPageContent = ({ content, containsPreviewData }) => {
   const pageContent = isPreview
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
-  console.log("pageContent: ", pageContent);
 
   return <>Inside ServicePageContent</>;
 };
