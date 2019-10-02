@@ -8,6 +8,26 @@ subText: >-
   id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae
   purus faucibus ornare suspendisse sed nisi
 mainImage: /img/sample-main-content-image.jpg
-servicesOverview: []
+servicesOverview:
+  - serviceDescription: >-
+      mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium
+      fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac
+      tortor vitae purus faucibus ornare suspendisse sed nisi
+    serviceTitle: 'Service #1'
+  - serviceDescription: >-
+      mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium
+      fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac
+      tortor vitae purus faucibus ornare suspendisse sed nisi
+    serviceTitle: 'Service #2'
+  - serviceDescription: >-
+      mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium
+      fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac
+      tortor vitae purus faucibus ornare suspendisse sed nisi
+    serviceTitle: 'Service #3'
+  - serviceDescription: >-
+      mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium
+      fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac
+      tortor vitae purus faucibus ornare suspendisse sed nisi
+    serviceTitle: 'Service #4'
 ---
 
