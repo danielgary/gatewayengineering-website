@@ -1,34 +1,7 @@
 import React from "react";
-import {} from "./styled";
+import { HeroBackground, TextInnerWrapper, HeroH1, HeroH3 } from "./styled";
 
 let isPreview;
-
-// const renderLinks = links => {
-//   return links.map((link, index) => {
-//     return (
-//       <LinkList key={index}>
-//         <LinkItems href={link.linkPath}>{link.linkName}</LinkItems>
-//       </LinkList>
-//     );
-//   });
-// };
-
-// const renderSocialMediaLinks = socialMediaLinks => {
-//   return socialMediaLinks.map((link, index) => {
-//     const imagePath = isPreview
-//       ? link.socialMediaImage
-//       : link.socialMediaImage.publicURL;
-//     return (
-//       <div key={index}>
-//         <div>
-//           <a href={link.socialMediaPath}>
-//             <img src={imagePath} />
-//           </a>
-//         </div>
-//       </div>
-//     );
-//   });
-// };
 
 export const HeroSectionContent = ({ content, containsPreviewData }) => {
   isPreview = containsPreviewData;
@@ -39,7 +12,12 @@ export const HeroSectionContent = ({ content, containsPreviewData }) => {
 
   return (
     <>
-      <div>Hello from the HeroSection component</div>
+      <HeroBackground>
+        <TextInnerWrapper>
+          <HeroH1>{pageContent.headerText}</HeroH1>
+          <HeroH3>{pageContent.subText}</HeroH3>
+        </TextInnerWrapper>
+      </HeroBackground>
     </>
   );
 };

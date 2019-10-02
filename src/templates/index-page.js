@@ -5,7 +5,11 @@ import HeroSectionContainer from "../components/hero-section/HeroSectionContaine
 export const IndexPage = () => (
   <>
     <Layout>
-      <div style={{ paddingTop: "150px" }}></div>
+      <div
+        style={{
+          paddingTop: "13.5vh"
+        }}
+      ></div>
       <HeroSectionContainer />
     </Layout>
   </>

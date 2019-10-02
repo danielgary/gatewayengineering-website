@@ -12,6 +12,15 @@ const HERO_SECTION_QUERY = graphql`
           id
           frontmatter {
             templateKey
+            headerBackgroundImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            headerText
+            subText
           }
         }
       }
