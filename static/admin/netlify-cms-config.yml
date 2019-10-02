@@ -62,6 +62,54 @@ collections:
                   - { label: Email, name: emailAddress, widget: string }
                   - { label: Phone Number, name: phoneNumber, widget: string }
                   - { label: Street Address, name: streetAddress, widget: text }
+      - label: "Front Page"
+        name: "frontPage"
+        files:
+          - label: "Hero section"
+            name: "heroSection"
+            file: "src/pages/hero-section/hero-section.md"
+            fields:
+              - {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "hero-section",
+              }
+              - label: Hero Background Image
+                name: headerBackgroundImage
+                widget: image
+              - label: Header Text
+                name: headerText
+                widget: string
+              - label: Sub Text
+                name: subText
+                widget: text
+          - label: "Main Content Section"
+            name: "mainContentSection"
+            file: "src/pages/main-content/main-content.md"
+            fields:
+              - {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "main-content",
+              }
+              - label: Header Text
+                name: headerText
+                widget: text
+              - label: Sub Text
+                name: subText
+                widget: text
+              - label: Main Image
+                name: mainImage
+                widget: image
+              - label: Services Overview
+                name: servicesOverview
+                widget: list
+                fields:
+                  - { label: Service Image, name: serviceImage, widget: image }
+                  - { label: Service Title, name: serviceTitle, widget: string }
+                  - { label: Service Description, name: serviceDescription, widget: text }
       - label: "Pages"
         name: "pages"
         files:
