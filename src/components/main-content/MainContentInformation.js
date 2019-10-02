@@ -1,6 +1,14 @@
 import React from "react";
 import Img from "gatsby-image";
-import {} from "./styled";
+import {
+  MainContentOuterDiv,
+  MainContentInnerTopDiv,
+  MainContentInnerBottomDiv,
+  MainContentTextWrapper,
+  MainContentHeaderText,
+  MainContentSubText,
+  ImageDiv
+} from "./styled";
 
 let isPreview;
 
@@ -27,15 +35,21 @@ export const MainContentInformation = ({ content, containsPreviewData }) => {
   const mainImage = pageContent.mainImage.childImageSharp.fluid;
 
   return (
-    <>
-      <div>
-        <div>
-          <h2>{pageContent.headerText}</h2>
-          <p>{pageContent.subText}</p>
-        </div>
-        <Img fluid={mainImage} alt="Engineering image" />
+    <MainContentOuterDiv>
+      <MainContentInnerTopDiv>
+        <MainContentTextWrapper>
+          <MainContentHeaderText>
+            {pageContent.headerText}
+          </MainContentHeaderText>
+          <MainContentSubText>{pageContent.subText}</MainContentSubText>
+        </MainContentTextWrapper>
+        <ImageDiv>
+          <Img fluid={mainImage} alt="Engineering image" />
+        </ImageDiv>
+      </MainContentInnerTopDiv>
+      <MainContentInnerBottomDiv>
         {renderServices(servicesOverview)}
-      </div>
-    </>
+      </MainContentInnerBottomDiv>
+    </MainContentOuterDiv>
   );
 };

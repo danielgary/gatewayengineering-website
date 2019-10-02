@@ -3,7 +3,7 @@ import heroBackgroundImage from "../../../static/img/sample-background-image-2.j
 
 const HeroBackground = styled.div`
   background-image: url(${heroBackgroundImage});
-  padding: 150px 0;
+  padding: 120px 0 280px 0;
   background-position: auto;
   background-repeat: no-repeat;
   background-size: cover;
