@@ -8,7 +8,7 @@ export const IndexPage = () => (
     <Layout>
       <div
         style={{
-          paddingTop: "13.5vh"
+          paddingTop: "12.2vh"
         }}
       ></div>
       <HeroSectionContainer />

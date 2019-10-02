@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MainContentOuterDiv = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #dedede;
+  background-color: #545454;
   margin-bottom: -100px;
   flex-direction: column;
   align-items: center;
@@ -23,6 +23,7 @@ const MainContentInnerTopDiv = styled.div`
 const MainContentTextWrapper = styled.div`
   max-width: 80%;
   text-align: center;
+  margin: 50px 0;
 `;
 const MainContentHeaderText = styled.h2`
   margin: 20px 0;
@@ -34,7 +35,9 @@ const MainContentSubText = styled.p`
 `;
 const ImageDiv = styled.div`
   width: 100%;
-  border-radius: 8px;
+  > img {
+    width: 100%;
+  }
 `;
 const MainContentInnerBottomDiv = styled.div`
   margin-top: 50px;
@@ -47,7 +50,7 @@ const MainContentInnerBottomDiv = styled.div`
   flex-wrap: wrap;
   background-color: #fff;
   transform: translate(0px, -100px);
-  padding: 20px 0;
+  padding: 40px 0 20px;
   border-radius: 8px 8px 0 0;
 `;
 const Service = styled.div`
@@ -60,11 +63,14 @@ const Service = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
   &:hover {
     transform: translate(-2px, -2px);
     box-shadow: 15px 25px 40px -25px;
-    transition: all 0.2s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  @media (max-width: 1000px) {
+    max-width: 80%;
   }
 `;
 const ServiceTitle = styled.h3`
@@ -72,9 +78,15 @@ const ServiceTitle = styled.h3`
 `;
 const ServiceDescription = styled.p`
   font-size: 18px;
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 const ServiceImageDiv = styled.div`
   width: 80%;
+  > img {
+    width: 100%;
+  }
 `;
 
 export {

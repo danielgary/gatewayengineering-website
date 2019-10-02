@@ -51,7 +51,7 @@ export const MainContentInformation = ({ content, containsPreviewData }) => {
     : pageContent.mainImage.childImageSharp.fluid;
 
   return (
-    <MainContentOuterDiv>
+    <MainContentOuterDiv style={{ marginTop: isPreview ? "150px" : undefined }}>
       <MainContentInnerTopDiv>
         <MainContentTextWrapper>
           <MainContentHeaderText>
