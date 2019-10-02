@@ -1,3 +1,3 @@
 ---
-templateKey
+templateKey: main-content
 ---
