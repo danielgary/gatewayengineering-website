@@ -42,12 +42,39 @@ const MainContentInnerBottomDiv = styled.div`
   width: 1200px;
   justify-self: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #fff;
-  border-radius: 8px;
   transform: translate(0px, -100px);
+  padding: 20px 0;
+  border-radius: 8px 8px 0 0;
+`;
+const Service = styled.div`
+  max-width: 40%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 35px -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 15px 25px 40px -25px;
+    transition: all 0.2s ease;
+  }
+`;
+const ServiceTitle = styled.h3`
+  font-size: 32px;
+`;
+const ServiceDescription = styled.p`
+  font-size: 18px;
+`;
+const ServiceImageDiv = styled.div`
+  width: 80%;
 `;
 
 export {
@@ -57,5 +84,9 @@ export {
   MainContentTextWrapper,
   MainContentHeaderText,
   MainContentSubText,
-  ImageDiv
+  ImageDiv,
+  Service,
+  ServiceTitle,
+  ServiceDescription,
+  ServiceImageDiv
 };

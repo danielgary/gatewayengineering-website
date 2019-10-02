@@ -7,18 +7,32 @@ import {
   MainContentTextWrapper,
   MainContentHeaderText,
   MainContentSubText,
-  ImageDiv
+  ImageDiv,
+  Service,
+  ServiceTitle,
+  ServiceDescription,
+  ServiceImageDiv
 } from "./styled";
 
 let isPreview;
 
 const renderServices = servicesOverview => {
   return servicesOverview.map((service, index) => {
+    const serviceImage = isPreview
+      ? service.serviceImage
+      : service.serviceImage.childImageSharp.fluid;
     return (
-      <div key={index}>
-        <div>{service.serviceTitle}</div>
-        <div>{service.serviceDescription}</div>
-      </div>
+      <Service key={index}>
+        <ServiceTitle>{service.serviceTitle}</ServiceTitle>
+        <ServiceImageDiv>
+          {isPreview ? (
+            <img src={service.serviceImage} alt="service" />
+          ) : (
+            <Img fluid={serviceImage} alt="service" />
+          )}
+        </ServiceImageDiv>
+        <ServiceDescription>{service.serviceDescription}</ServiceDescription>
+      </Service>
     );
   });
 };
@@ -32,7 +46,9 @@ export const MainContentInformation = ({ content, containsPreviewData }) => {
 
   const { servicesOverview } = pageContent;
 
-  const mainImage = pageContent.mainImage.childImageSharp.fluid;
+  const mainImage = isPreview
+    ? pageContent.mainImage
+    : pageContent.mainImage.childImageSharp.fluid;
 
   return (
     <MainContentOuterDiv>
@@ -44,7 +60,11 @@ export const MainContentInformation = ({ content, containsPreviewData }) => {
           <MainContentSubText>{pageContent.subText}</MainContentSubText>
         </MainContentTextWrapper>
         <ImageDiv>
-          <Img fluid={mainImage} alt="Engineering image" />
+          {isPreview ? (
+            <img alt="Engineering" src={mainImage} />
+          ) : (
+            <Img fluid={mainImage} alt="Engineering" />
+          )}
         </ImageDiv>
       </MainContentInnerTopDiv>
       <MainContentInnerBottomDiv>

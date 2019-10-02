@@ -24,6 +24,13 @@ const MAIN_CONTENT_QUERY = graphql`
             servicesOverview {
               serviceTitle
               serviceDescription
+              serviceImage {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
             }
           }
         }
