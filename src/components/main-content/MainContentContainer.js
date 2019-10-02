@@ -12,6 +12,19 @@ const MAIN_CONTENT_QUERY = graphql`
           id
           frontmatter {
             templateKey
+            headerText
+            subText
+            mainImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            servicesOverview {
+              serviceTitle
+              serviceDescription
+            }
           }
         }
       }

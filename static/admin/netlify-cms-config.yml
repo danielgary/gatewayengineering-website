@@ -105,7 +105,7 @@ collections:
                 widget: image
               - label: Services Overview
                 name: servicesOverview
-                widget: lsit
+                widget: list
                 fields:
                   - { label: Service Image, name: serviceImage, widget: image }
                   - { label: Service Title, name: serviceTitle, widget: string }

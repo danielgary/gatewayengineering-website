@@ -1,34 +1,19 @@
 import React from "react";
+import Img from "gatsby-image";
 import {} from "./styled";
 
 let isPreview;
 
-// const renderLinks = links => {
-//   return links.map((link, index) => {
-//     return (
-//       <LinkList key={index}>
-//         <LinkItems href={link.linkPath}>{link.linkName}</LinkItems>
-//       </LinkList>
-//     );
-//   });
-// };
-
-// const renderSocialMediaLinks = socialMediaLinks => {
-//   return socialMediaLinks.map((link, index) => {
-//     const imagePath = isPreview
-//       ? link.socialMediaImage
-//       : link.socialMediaImage.publicURL;
-//     return (
-//       <div key={index}>
-//         <div>
-//           <a href={link.socialMediaPath}>
-//             <img src={imagePath} />
-//           </a>
-//         </div>
-//       </div>
-//     );
-//   });
-// };
+const renderServices = servicesOverview => {
+  return servicesOverview.map((service, index) => {
+    return (
+      <div key={index}>
+        <div>{service.serviceTitle}</div>
+        <div>{service.serviceDescription}</div>
+      </div>
+    );
+  });
+};
 
 export const MainContentInformation = ({ content, containsPreviewData }) => {
   isPreview = containsPreviewData;
@@ -37,9 +22,20 @@ export const MainContentInformation = ({ content, containsPreviewData }) => {
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
 
+  const { servicesOverview } = pageContent;
+
+  const mainImage = pageContent.mainImage.childImageSharp.fluid;
+
   return (
     <>
-      <div>Hello from the MainContentInformation component</div>
+      <div>
+        <div>
+          <h2>{pageContent.headerText}</h2>
+          <p>{pageContent.subText}</p>
+        </div>
+        <Img fluid={mainImage} alt="Engineering image" />
+        {renderServices(servicesOverview)}
+      </div>
     </>
   );
 };
