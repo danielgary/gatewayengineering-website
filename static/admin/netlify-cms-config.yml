@@ -84,6 +84,32 @@ collections:
               - label: Sub Text
                 name: subText
                 widget: text
+          - label: "Main Content Section"
+            name: "mainContentSection"
+            file: "src/pages/main-content/main-content.md"
+            fields:
+              - {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "main-content",
+              }
+              - label: Header Text
+                name: headerText
+                widget: text
+              - label: Sub Text
+                name: subText
+                widget: text
+              - label: Main Image
+                name: mainImage
+                widget: image
+              - label: Services Overview
+                name: servicesOverview
+                widget: lsit
+                fields:
+                  - { label: Service Image, name: serviceImage, widget: image }
+                  - { label: Service Title, name: serviceTitle, widget: string }
+                  - { label: Service Description, name: serviceDescription, widget: text }
       - label: "Pages"
         name: "pages"
         files:
