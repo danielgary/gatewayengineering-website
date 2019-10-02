@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: gatewayapps/gatewayengineering-website
-  branch: master 
+  branch: enhancement/4/front-page-design 
 
 # publish_mode: editorial_workflow
 site_url: https://www.gatewayengineering.com/
@@ -62,6 +62,28 @@ collections:
                   - { label: Email, name: emailAddress, widget: string }
                   - { label: Phone Number, name: phoneNumber, widget: string }
                   - { label: Street Address, name: streetAddress, widget: text }
+      - label: "Front Page"
+        name: "frontPage"
+        files:
+          - label: "Hero section"
+            name: "heroSection"
+            file: "src/pages/hero-section/hero-section.md"
+            fields:
+              - {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "hero-section",
+              }
+              - label: Hero Background Image
+                name: headerBackgroundImage
+                widget: image
+              - label: Header Text
+                name: headerText
+                widget: string
+              - label: Sub Text
+                name: subText
+                widget: text
       - label: "Pages"
         name: "pages"
         files:
