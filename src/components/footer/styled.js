@@ -14,6 +14,7 @@ const FooterInnerWrapper = styled.div`
 const ContactAndLinkWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
   @media (max-width: 500px) {
     margin-bottom: 20px;
   }
@@ -37,6 +38,7 @@ const ContactEmail = styled.div`
     color: #28bafd;
     font-size: 20px;
     font-weight: 300;
+    word-break: break-all;
     @media (max-width: 440px) {
       font-size: 18px;
     }
