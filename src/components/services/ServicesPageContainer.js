@@ -12,6 +12,19 @@ const SERVICES_PAGE_QUERY = graphql`
           id
           frontmatter {
             templateKey
+            servicesHeader
+            salesPitch
+            servicesList {
+              serviceDescription
+              serviceName
+              serviceImage {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
           }
         }
       }
