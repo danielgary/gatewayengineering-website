@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import { Link } from "gatsby";
 import {
   MainContentOuterDiv,
   MainContentInnerTopDiv,
@@ -23,15 +24,17 @@ const renderServices = servicesOverview => {
       : service.serviceImage.childImageSharp.fluid;
     return (
       <Service key={index}>
-        <ServiceTitle>{service.serviceTitle}</ServiceTitle>
-        <ServiceImageDiv>
-          {isPreview ? (
-            <img src={service.serviceImage} alt="service" />
-          ) : (
-            <Img fluid={serviceImage} alt="service" />
-          )}
-        </ServiceImageDiv>
-        <ServiceDescription>{service.serviceDescription}</ServiceDescription>
+        <Link to="/services">
+          <ServiceTitle>{service.serviceTitle}</ServiceTitle>
+          <ServiceImageDiv>
+            {isPreview ? (
+              <img src={service.serviceImage} alt="service" />
+            ) : (
+              <Img fluid={serviceImage} alt="service" />
+            )}
+          </ServiceImageDiv>
+          <ServiceDescription>{service.serviceDescription}</ServiceDescription>
+        </Link>
       </Service>
     );
   });

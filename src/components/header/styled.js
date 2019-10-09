@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+const HeaderOuterWrapper = styled.div`
+  height: 130px;
+`;
 const HeaderWrapper = styled.div`
   width: 100%;
   border-bottom: 2px solid #000;
@@ -7,6 +10,7 @@ const HeaderWrapper = styled.div`
   background-color: #fff;
   opacity: 0.8;
   z-index: 10;
+  height: 130px;
   &[data-expanded="true"] {
     border-bottom: none;
   }
@@ -24,14 +28,15 @@ const ImageAndLinkWrapper = styled.div`
   }
 `;
 const ImageWrapper = styled.div`
+  width: 500px;
+  @media (max-width: 824px) {
+    width: 300px;
+  }
+  @media (max-width: 410px) {
+    width: 240px;
+  }
   > img {
-    width: 500px;
-    @media (max-width: 824px) {
-      width: 300px;
-    }
-    @media (max-width: 410px) {
-      width: 240px;
-    }
+    width: 100%;
   }
 `;
 const NavigationWrapper = styled.div`
@@ -89,6 +94,7 @@ const NavigationMenuToggle = styled.i`
 `;
 
 export {
+  HeaderOuterWrapper,
   HeaderWrapper,
   ImageAndLinkWrapper,
   ImageWrapper,

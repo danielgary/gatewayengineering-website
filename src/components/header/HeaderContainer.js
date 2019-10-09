@@ -14,6 +14,11 @@ const HEADER_QUERY = graphql`
             templateKey
             headerLogo {
               publicURL
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
             }
             navigationLinks {
               name

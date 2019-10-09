@@ -1,6 +1,7 @@
 import React from "react";
 import {
   HeaderWrapper,
+  HeaderOuterWrapper,
   ImageAndLinkWrapper,
   ImageWrapper,
   NavigationWrapper,
@@ -8,6 +9,7 @@ import {
   NavigationMenuToggle
 } from "./styled";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -34,35 +36,41 @@ export const HeaderContent = ({
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
   const headerLogo = isPreview
-    ? content.headerLogo
-    : pageContent.headerLogo.publicURL;
+    ? pageContent.headerLogo
+    : pageContent.headerLogo.childImageSharp.fluid;
   const { navigationLinks } = pageContent;
 
   return (
     <>
-      <HeaderWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
-        <ImageAndLinkWrapper>
-          <Link to="/">
-            <ImageWrapper>
-              <img src={headerLogo} alt="gatewayengineering logo" />
-            </ImageWrapper>
-          </Link>
-          <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
-            {renderNavigationLinks(navigationLinks)}
-          </NavigationWrapper>
-          <NavigationMenuToggle
-            style={{ width: isPreview ? "1em" : "2.25em" }}
-            onClick={() =>
-              updateMobileNavigationMenuIsOpen(!mobileNavigationMenuIsOpen)
-            }
-          >
-            <FontAwesomeIcon
-              icon={faBars}
-              style={{ display: "block", margin: "0 auto", marginTop: "2px" }}
-            />
-          </NavigationMenuToggle>
-        </ImageAndLinkWrapper>
-      </HeaderWrapper>
+      <HeaderOuterWrapper>
+        <HeaderWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
+          <ImageAndLinkWrapper>
+            <Link to="/">
+              <ImageWrapper>
+                {isPreview ? (
+                  <img src={headerLogo} alt="Gateway Engineering logo" />
+                ) : (
+                  <Img fluid={headerLogo} alt="Gateway Engineering logo" />
+                )}
+              </ImageWrapper>
+            </Link>
+            <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
+              {renderNavigationLinks(navigationLinks)}
+            </NavigationWrapper>
+            <NavigationMenuToggle
+              style={{ width: isPreview ? "1em" : "2.25em" }}
+              onClick={() =>
+                updateMobileNavigationMenuIsOpen(!mobileNavigationMenuIsOpen)
+              }
+            >
+              <FontAwesomeIcon
+                icon={faBars}
+                style={{ display: "block", margin: "0 auto", marginTop: "2px" }}
+              />
+            </NavigationMenuToggle>
+          </ImageAndLinkWrapper>
+        </HeaderWrapper>
+      </HeaderOuterWrapper>
     </>
   );
 };

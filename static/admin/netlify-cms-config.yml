@@ -113,44 +113,53 @@ collections:
       - label: "Pages"
         name: "pages"
         files:
-          - label: "About"
-            name: "about"
-            file: "src/pages/about.md"
-            fields:
-              - {
-                  label: "Template Key",
-                  name: "templateKey",
-                  widget: "hidden",
-                  default: "about-page",
-                }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Services Page"
-            name: "services"
-            file: "src/pages/services.md"
-            fields:
-              - {
-                  label: "Template Key",
-                  name: "templateKey",
-                  widget: "hidden",
-                  default: "services-page",
-                }
-              - label: Services 
-                name: servicesList 
-                widget: list
-                fields: 
-                  - { label: Service, name: serviceName, widget: string }
-                  - { label: Service Description, name: serviceDescription, widget: text }
-                  - { label: ServiceImage, name: serviceImage, widget: image }
-          - label: "Contact"
-            name: "contact"
-            file: "src/pages/contact.md"
-            fields:
-              - {
-                  label: "Template Key",
-                  name: "templateKey",
-                  widget: "hidden",
-                  default: "contact-page",
-                }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Body", name: "body", widget: "markdown" }
+        - name: about
+          label: About Page
+          file: src/pages/about.md
+          fields:
+            - {
+                label: Template Key,
+                name: templateKey,
+                widget: hidden,
+                default: about,
+            }
+            - label: Header Text
+              name: headerText
+              widget: string
+            - label: Sub Text
+              name: subText
+            - label: About Image
+              name: aboutImage
+              widget: image
+            - label: About Section
+              name: aboutSection
+              widget: markdown
+        - label: "Services Page"
+          name: "services"
+          file: "src/pages/services.md"
+          fields:
+            - {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "services-page",
+              }
+            - label: Services 
+              name: servicesList 
+              widget: list
+              fields: 
+                - { label: Service, name: serviceName, widget: string }
+                - { label: Service Description, name: serviceDescription, widget: text }
+                - { label: ServiceImage, name: serviceImage, widget: image }
+        - label: "Contact"
+          name: "contact"
+          file: "src/pages/contact.md"
+          fields:
+            - {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "contact-page",
+              }
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Body", name: "body", widget: "markdown" }

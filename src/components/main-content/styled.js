@@ -64,6 +64,14 @@ const Service = styled.div`
   align-items: center;
   text-align: center;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  > a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   &:hover {
     transform: translate(-2px, -2px);
     box-shadow: 15px 25px 40px -25px;
