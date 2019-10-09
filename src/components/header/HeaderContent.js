@@ -1,6 +1,7 @@
 import React from "react";
 import {
   HeaderWrapper,
+  HeaderOuterWrapper,
   ImageAndLinkWrapper,
   ImageWrapper,
   NavigationWrapper,
@@ -40,29 +41,31 @@ export const HeaderContent = ({
 
   return (
     <>
-      <HeaderWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
-        <ImageAndLinkWrapper>
-          <Link to="/">
-            <ImageWrapper>
-              <img src={headerLogo} alt="gatewayengineering logo" />
-            </ImageWrapper>
-          </Link>
-          <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
-            {renderNavigationLinks(navigationLinks)}
-          </NavigationWrapper>
-          <NavigationMenuToggle
-            style={{ width: isPreview ? "1em" : "2.25em" }}
-            onClick={() =>
-              updateMobileNavigationMenuIsOpen(!mobileNavigationMenuIsOpen)
-            }
-          >
-            <FontAwesomeIcon
-              icon={faBars}
-              style={{ display: "block", margin: "0 auto", marginTop: "2px" }}
-            />
-          </NavigationMenuToggle>
-        </ImageAndLinkWrapper>
-      </HeaderWrapper>
+      <HeaderOuterWrapper>
+        <HeaderWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
+          <ImageAndLinkWrapper>
+            <Link to="/">
+              <ImageWrapper>
+                <img src={headerLogo} alt="gatewayengineering logo" />
+              </ImageWrapper>
+            </Link>
+            <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
+              {renderNavigationLinks(navigationLinks)}
+            </NavigationWrapper>
+            <NavigationMenuToggle
+              style={{ width: isPreview ? "1em" : "2.25em" }}
+              onClick={() =>
+                updateMobileNavigationMenuIsOpen(!mobileNavigationMenuIsOpen)
+              }
+            >
+              <FontAwesomeIcon
+                icon={faBars}
+                style={{ display: "block", margin: "0 auto", marginTop: "2px" }}
+              />
+            </NavigationMenuToggle>
+          </ImageAndLinkWrapper>
+        </HeaderWrapper>
+      </HeaderOuterWrapper>
     </>
   );
 };

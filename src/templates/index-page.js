@@ -5,12 +5,7 @@ import MainContentContainer from "../components/main-content/MainContentContaine
 
 export const IndexPage = () => (
   <>
-    <Layout>
-      <div
-        style={{
-          paddingTop: "12.2vh"
-        }}
-      ></div>
+    <Layout title="Gateway Engineering">
       <HeroSectionContainer />
       <MainContentContainer />
     </Layout>

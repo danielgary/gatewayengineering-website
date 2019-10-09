@@ -1,3 +1,3 @@
 ---
-templateKey: about-page
+templateKey: about
 ---
