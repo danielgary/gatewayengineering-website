@@ -35,6 +35,9 @@ const ImageWrapper = styled.div`
   @media (max-width: 410px) {
     width: 240px;
   }
+  > img {
+    width: 100%;
+  }
 `;
 const NavigationWrapper = styled.div`
   display: flex;
