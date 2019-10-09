@@ -28,14 +28,12 @@ const ImageAndLinkWrapper = styled.div`
   }
 `;
 const ImageWrapper = styled.div`
-  > img {
-    width: 500px;
-    @media (max-width: 824px) {
-      width: 300px;
-    }
-    @media (max-width: 410px) {
-      width: 240px;
-    }
+  width: 500px;
+  @media (max-width: 824px) {
+    width: 300px;
+  }
+  @media (max-width: 410px) {
+    width: 240px;
   }
 `;
 const NavigationWrapper = styled.div`

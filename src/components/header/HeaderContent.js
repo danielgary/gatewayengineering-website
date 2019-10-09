@@ -9,6 +9,7 @@ import {
   NavigationMenuToggle
 } from "./styled";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -35,8 +36,8 @@ export const HeaderContent = ({
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
   const headerLogo = isPreview
-    ? content.headerLogo
-    : pageContent.headerLogo.publicURL;
+    ? pageContent.headerLogo
+    : pageContent.headerLogo.childImageSharp.fluid;
   const { navigationLinks } = pageContent;
 
   return (
@@ -46,7 +47,11 @@ export const HeaderContent = ({
           <ImageAndLinkWrapper>
             <Link to="/">
               <ImageWrapper>
-                <img src={headerLogo} alt="gatewayengineering logo" />
+                {isPreview ? (
+                  <img src={headerLogo} alt="Gateway Engineering logo" />
+                ) : (
+                  <Img fluid={headerLogo} alt="Gateway Engineering logo" />
+                )}
               </ImageWrapper>
             </Link>
             <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
