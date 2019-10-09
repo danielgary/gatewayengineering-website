@@ -1,3 +1,3 @@
 ---
-templateKey: "services-page"
+templateKey: "services"
 ---

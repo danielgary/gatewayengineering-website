@@ -5,7 +5,7 @@ import { ServicesPage } from "./ServicesPage";
 const SERVICES_PAGE_QUERY = graphql`
   query ServicesPageQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "services-page" } } }
+      filter: { frontmatter: { templateKey: { eq: "services" } } }
     ) {
       edges {
         node {

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: gatewayapps/gatewayengineering-website
-  branch: master 
+  branch: services-page-design 
 
 # publish_mode: editorial_workflow
 site_url: https://www.gatewayengineering.com/
@@ -144,10 +144,16 @@ collections:
                 widget: "hidden",
                 default: "services-page",
               }
-            - label: Services 
-              name: servicesList 
+            - label: Services Header
+              name: servicesHeader
+              widget: string
+            - label: Services Sales Pitch
+              name: salesPitch
+              widget: text
+            - label: Services
+              name: servicesList
               widget: list
-              fields: 
+              fields:
                 - { label: Service, name: serviceName, widget: string }
                 - { label: Service Description, name: serviceDescription, widget: text }
                 - { label: ServiceImage, name: serviceImage, widget: image }
