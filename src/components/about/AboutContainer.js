@@ -12,6 +12,17 @@ const ABOUT_QUERY = graphql`
           id
           frontmatter {
             templateKey
+            headerText
+            subText
+            aboutSection
+            aboutImage {
+              publicURL
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }
