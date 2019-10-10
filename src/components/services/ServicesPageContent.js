@@ -43,7 +43,6 @@ export const renderServices = (
     const serviceImage = isPreview
       ? item.serviceImage
       : item.serviceImage.childImageSharp.fluid;
-    console.log("isCollapsed: ", serviceIsCollapsed);
     return (
       <ServiceWrapper key={index}>
         <ServiceNameAndIcon data-collapsed={serviceIsCollapsed}>
@@ -54,10 +53,7 @@ export const renderServices = (
               serviceShouldCollapse(isCollapsed, index, updateIsCollapsed);
             }}
           >
-            <FontAwesomeIcon
-              // style={{ fontSize: "50px", width: "10%" }}
-              icon={faChevronUp}
-            />
+            <FontAwesomeIcon icon={faChevronUp} />
           </IconSpan>
         </ServiceNameAndIcon>
         <ServiceMainContent data-collapsed={serviceIsCollapsed}>
