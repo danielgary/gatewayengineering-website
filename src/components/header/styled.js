@@ -11,7 +11,7 @@ const HeaderWrapper = styled.div`
   border-bottom: 2px solid #000;
   position: fixed;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
   z-index: 10;
   height: 130px;
   @media (max-width: 824px) {
@@ -19,6 +19,7 @@ const HeaderWrapper = styled.div`
   }
   &[data-expanded="true"] {
     border-bottom: none;
+    opacity: 0.98;
   }
 `;
 const ImageAndLinkWrapper = styled.div`
