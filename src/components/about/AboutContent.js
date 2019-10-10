@@ -3,7 +3,9 @@ import showdown from "showdown";
 import {
   AboutHeaderText,
   AboutSubText,
-  AboutImageDiv,
+  AboutHeaderWrapper,
+  AboutHeaderInnerWrapper,
+  // AboutImageDiv,
   AboutBody,
   OuterAboutWrapper,
   InnerAboutWrapper
@@ -36,16 +38,13 @@ export const AboutContent = ({ content, containsPreviewData }) => {
   return (
     <>
       <OuterAboutWrapper>
+        <AboutHeaderWrapper>
+          <AboutHeaderInnerWrapper>
+            <AboutHeaderText>{pageContent.headerText}</AboutHeaderText>
+            <AboutSubText>{pageContent.subText}</AboutSubText>
+          </AboutHeaderInnerWrapper>
+        </AboutHeaderWrapper>
         <InnerAboutWrapper>
-          <AboutHeaderText>{pageContent.headerText}</AboutHeaderText>
-          <AboutSubText>{pageContent.subText}</AboutSubText>
-          <AboutImageDiv>
-            {isPreview ? (
-              <img src={aboutImage} alt="About" />
-            ) : (
-              <Img fluid={aboutImage} alt="About" />
-            )}
-          </AboutImageDiv>
           <AboutBody>{renderHTML(aboutSectionData)}</AboutBody>
         </InnerAboutWrapper>
       </OuterAboutWrapper>

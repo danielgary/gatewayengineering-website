@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 const HeaderOuterWrapper = styled.div`
   height: 130px;
+  @media (max-width: 824px) {
+    height: auto;
+  }
 `;
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -11,6 +14,9 @@ const HeaderWrapper = styled.div`
   opacity: 0.8;
   z-index: 10;
   height: 130px;
+  @media (max-width: 824px) {
+    height: auto;
+  }
   &[data-expanded="true"] {
     border-bottom: none;
   }

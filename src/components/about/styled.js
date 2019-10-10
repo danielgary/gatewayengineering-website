@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import serviceBackgroundImage from "../../../static/img/black-background_00313351.jpg";
 
 const OuterAboutWrapper = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #f5f5f5;
+  flex-direction: column;
+  align-items: center;
 `;
 const InnerAboutWrapper = styled.div`
   width: 88%;
@@ -29,7 +31,6 @@ const AboutSubText = styled.h2`
   font-weight: 400;
   margin-top: 0px;
   padding: 20px;
-  border-top: 1.5px solid #000;
   @media (max-width: 500px) {
     width: 75%;
   }
@@ -61,6 +62,26 @@ const AboutBody = styled.div`
     margin-top: 0px;
   }
 `;
+const AboutHeaderWrapper = styled.div`
+  background-image: url(${serviceBackgroundImage});
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+const AboutHeaderInnerWrapper = styled.div`
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 88%;
+  max-width: 1200px;
+  padding: 100px 0;
+`;
 
 export {
   AboutHeaderText,
@@ -68,5 +89,7 @@ export {
   AboutImageDiv,
   AboutBody,
   OuterAboutWrapper,
-  InnerAboutWrapper
+  InnerAboutWrapper,
+  AboutHeaderWrapper,
+  AboutHeaderInnerWrapper
 };

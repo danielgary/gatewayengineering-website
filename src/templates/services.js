@@ -4,7 +4,7 @@ import ServicesPageContainer from "../components/services/ServicesPageContainer"
 
 const ServicesPage = () => {
   return (
-    <Layout>
+    <Layout title="Services">
       <ServicesPageContainer />
     </Layout>
   );
