@@ -45,15 +45,15 @@ export const HeaderContent = ({
       <HeaderOuterWrapper>
         <HeaderWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
           <ImageAndLinkWrapper>
-            <Link to="/">
-              <ImageWrapper>
+            <ImageWrapper>
+              <Link to="/">
                 {isPreview ? (
                   <img src={headerLogo} alt="Gateway Engineering logo" />
                 ) : (
                   <Img fluid={headerLogo} alt="Gateway Engineering logo" />
                 )}
-              </ImageWrapper>
-            </Link>
+              </Link>
+            </ImageWrapper>
             <NavigationWrapper data-expanded={!!mobileNavigationMenuIsOpen}>
               {renderNavigationLinks(navigationLinks)}
             </NavigationWrapper>
