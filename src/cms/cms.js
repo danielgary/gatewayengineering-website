@@ -9,6 +9,7 @@ import HeaderPreview from "./preview-templates/HeaderPreview";
 import FooterPreview from "./preview-templates/FooterPreview";
 import HeroSectionPreview from "./preview-templates/HeroSectionPreview";
 import MainContentPreview from "./preview-templates/MainContentPreview";
+import ContactPagePreview from './preview-templates/ContactPagePreview';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -16,6 +17,7 @@ CMS.registerMediaLibrary(cloudinary);
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("services", ServicesPagePreview);
+CMS.registerPreviewTemplate('contact', ContactPagePreview);
 CMS.registerPreviewTemplate("header", HeaderPreview);
 CMS.registerPreviewTemplate("footer", FooterPreview);
 CMS.registerPreviewTemplate("heroSection", HeroSectionPreview);

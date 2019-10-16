@@ -5,12 +5,10 @@ import {
   AboutSubText,
   AboutHeaderWrapper,
   AboutHeaderInnerWrapper,
-  // AboutImageDiv,
   AboutBody,
   OuterAboutWrapper,
   InnerAboutWrapper
 } from "./styled";
-import Img from "gatsby-image";
 
 const converter = new showdown.Converter();
 const HtmlToReactParser = require("html-to-react").Parser;
@@ -30,9 +28,6 @@ export const AboutContent = ({ content, containsPreviewData }) => {
     ? content
     : content.allMarkdownRemark.edges[0].node.frontmatter;
   const { aboutSection } = pageContent;
-  const aboutImage = isPreview
-    ? pageContent.aboutImage
-    : pageContent.aboutImage.childImageSharp.fluid;
   const aboutSectionData = converter.makeHtml(aboutSection);
 
   return (

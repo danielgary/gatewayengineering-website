@@ -1,12 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
 import StylesheetInjector from "../components/global-themes/stylesheetInjector";
+import { GlobalStyle } from "../components/global-themes/global";
 import { MainContentContainer } from "../components/main-content/MainContentContainer";
 
 export const MainContentTemplate = ({ content }) => {
   // StylesheetInjector injects the styled components into the iframe in the CMS preview pages.
   return (
     <StylesheetInjector>
+      <GlobalStyle />
       <MainContentContainer content={content} />
     </StylesheetInjector>
   );

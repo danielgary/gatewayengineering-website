@@ -48,7 +48,11 @@ export const HeaderContent = ({
             <ImageWrapper>
               <Link to="/">
                 {isPreview ? (
-                  <img src={headerLogo} alt="Gateway Engineering logo" />
+                  <img
+                    style={{ width: "100%" }}
+                    src={headerLogo}
+                    alt="Gateway Engineering logo"
+                  />
                 ) : (
                   <Img fluid={headerLogo} alt="Gateway Engineering logo" />
                 )}
