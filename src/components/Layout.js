@@ -5,6 +5,7 @@ import { GlobalStyle } from "./global-themes/global";
 import SEO from "./SiteMetadata";
 
 const TemplateWrapper = props => {
+  console.log(props);
   return (
     <>
       <GlobalStyle />

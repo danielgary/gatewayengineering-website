@@ -1,6 +1,6 @@
 import React from "react";
-import StylesheetInjector from "../../components/global-themes/stylesheetInjector";
-import { ContactPageContainer } from "../../components/contact-page/ContactPageContainer";
+import StylesheetInjector from "../global-themes/stylesheetInjector";
+import { ContactPageContainer } from "./ContactPageContainer";
 
 export const ContactPageTemplate = ({ content }) => {
   // StylesheetInjector injects the styled components into the iframe in the CMS preview pages.
