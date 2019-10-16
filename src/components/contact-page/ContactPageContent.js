@@ -19,19 +19,21 @@ const formatContactPhoneNumber = () => {
     ? document.getElementById("phoneField")
     : undefined;
   if (phoneField) {
-    phoneField.addEventListener("keyup", function() {
+    phoneField.addEventListener("keyup", () => {
       let phoneValue = phoneField.value;
       let output;
       phoneValue = phoneValue.replace(/[^0-9]/g, "");
-      const area = phoneValue.substr(0, 3);
-      const pre = phoneValue.substr(3, 3);
-      const tel = phoneValue.substr(6, 4);
-      if (area.length < 3) {
-        output = "(" + area;
-      } else if (area.length == 3 && pre.length < 3) {
-        output = "(" + area + ")" + " " + pre;
-      } else if (area.length == 3 && pre.length == 3) {
-        output = "(" + area + ")" + " " + pre + " - " + tel;
+      const areaCode = phoneValue.substr(0, 3);
+      const firstThree = phoneValue.substr(3, 3);
+      const lastFour = phoneValue.substr(6, 4);
+      if (areaCode.length === 0) {
+        output = "";
+      } else if (areaCode.length < 3 && areaCode.length > 0) {
+        output = `(${areaCode}`;
+      } else if (areaCode.length === 3 && firstThree.length < 3) {
+        output = `(${areaCode}) ${firstThree}`;
+      } else if (areaCode.length === 3 && firstThree.length === 3) {
+        output = `(${areaCode}) ${firstThree} - ${lastFour}`;
       }
       phoneField.value = output;
     });
