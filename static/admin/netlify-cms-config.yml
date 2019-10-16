@@ -168,4 +168,4 @@ collections:
                 default: "contact-page",
               }
             - { label: "Title", name: "title", widget: "string" }
-            - { label: "Body", name: "body", widget: "markdown" }
+            - { label: "Sub Text", name: "subText", widget: "text" }
