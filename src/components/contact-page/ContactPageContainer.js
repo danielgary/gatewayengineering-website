@@ -12,6 +12,8 @@ const CONTACT_PAGE_QUERY = graphql`
           id
           frontmatter {
             templateKey
+            title
+            subText
           }
         }
       }
