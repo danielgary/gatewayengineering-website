@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: gatewayapps/gatewayengineering-website
-  branch: services-page-design 
+  branch: enhancement/7/contact-page-design 
 
 # publish_mode: editorial_workflow
 site_url: https://www.gatewayengineering.com/
