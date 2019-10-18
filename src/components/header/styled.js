@@ -8,7 +8,7 @@ const HeaderOuterWrapper = styled.div`
 `;
 const HeaderWrapper = styled.div`
   width: 100%;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
   position: fixed;
   background-color: #fff;
   opacity: 0.9;
