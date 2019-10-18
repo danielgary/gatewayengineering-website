@@ -12,7 +12,7 @@ navigationLinks:
     path: /contact
 copyright: '© Gateway Engineering, LLC'
 contactInformation:
-  emailAddress: someemail@email.com
+  emailAddress: info@gatewayengineering.us
   phoneNumber: (870) 935-6411
   streetAddress: '1618 Browns Lane Access Rd, Jonesboro, AR 72401'
 ---
