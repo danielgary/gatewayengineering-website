@@ -15,7 +15,7 @@ const HERO_SECTION_QUERY = graphql`
             headerBackgroundImage {
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }
