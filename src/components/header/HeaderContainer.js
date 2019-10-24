@@ -16,7 +16,7 @@ const HEADER_QUERY = graphql`
               publicURL
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }

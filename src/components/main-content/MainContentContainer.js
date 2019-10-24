@@ -17,7 +17,7 @@ const MAIN_CONTENT_QUERY = graphql`
             mainImage {
               childImageSharp {
                 fluid {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }
@@ -27,7 +27,7 @@ const MAIN_CONTENT_QUERY = graphql`
               serviceImage {
                 childImageSharp {
                   fluid {
-                    ...GatsbyImageSharpFluid_withWebp
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
               }
